@@ -14,7 +14,6 @@ do_action( 'raindrops_pre_part_'. basename( __FILE__, '.php' ). '_'. basename( $
 <?php
 	if ( ! dynamic_sidebar('approach-1-2' ) ) {
 		the_widget( 'WP_Widget_Categories' );
-
 	} 
 ?>
 </ul>

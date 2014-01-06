@@ -56,13 +56,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 				} elseif (in_category( "blog" ) || has_post_format( "status" ) ) {
 					
 					get_template_part( 'part', 'blog' );
-					
-					
-					
-					
-					
 				} elseif ( $format !== false ) {
-				
 				
 					get_template_part( 'part', $format );
 /**

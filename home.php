@@ -1,12 +1,5 @@
 <?php
-/*
-	this page is copyed from full-width.php template
-*/
-
-
-
 		do_action( 'raindrops_'. basename(__FILE__) );
-
 		get_header( $raindrops_document_type );
 		do_action( 'raindrops_pre_'.basename( __FILE__) );
 		
@@ -15,7 +8,6 @@
 		if ( $raindrops_current_column !== false ) {
 			add_filter( "raindrops_theme_settings__raindrops_indv_css","raindrops_color_type_custom" );
 		}
-
 		raindrops_debug_navitation( __FILE__ );
 ?>
 	<div id="yui-main">
@@ -33,17 +25,6 @@
 			
 			echo '</ul>'."\n".'</div>'."\n".'<br class="clear" />';
 		}
-		
-	/* remove 	if ( have_posts( ) ) {
-		 
-			while ( have_posts( ) ) { 
-			
-   
-			} //endwhile 
-				raindrops_next_prev_links( "nav-below" );
-		 } //end have post */
-		 
-		 /* add below function*/
 ?>
 
 		<div class="after-nav-menu">
@@ -68,19 +49,10 @@
 		),
 
 	);
-	
 	raindrops_poster( $page_lists );
 ?>
 		</div>
 <?php
-/** puddle_list_post_formats( )
- *
- *
- * paramater exlude link( slug ) post format
- * puddle_list_post_formats( array( 'link' ) );
- */
-	//echo puddle_list_post_formats( );
-		
 /** raindrops_tile( )
  *
  *

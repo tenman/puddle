@@ -2,6 +2,30 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+/**Parent language file customize example
+ *
+ *
+ * copy from raindrops/languages/lang.mo
+ * paste to puddle/languages/raindrops/lang.mo
+ *
+ */
+/* Example code
+
+add_filter( 'raindrops_load_text_domain', 'puddle_child_lang' );
+function child_lang( ) {
+
+	return get_stylesheet_directory().'/languages/raindrops';
+}
+*/
+/**Puddle language file
+ *
+ *
+ *
+ */
+
+load_child_theme_textdomain( 'puddle',get_stylesheet_directory( ) . '/languages' );
+
 /**Theme Puddle Infomation
  *
  *
@@ -19,14 +43,12 @@ $puddle_current_theme_name			= $puddle_current_data->get( 'Name' );
  *
  *
  */	
-	add_action( 'raindrops_include_after', 'raindrops_extend_styles' );
+add_action( 'raindrops_include_after', 'raindrops_extend_styles' );
 
-	function raindrops_extend_styles(){
-	
-		raindrops_register_styles("puddle");
-	}
-	
-	
+function raindrops_extend_styles(){
+
+	raindrops_register_styles("puddle");
+}
 /** Child Theme Color Type Base Settings
  * 
  *
@@ -38,42 +60,39 @@ $puddle_current_theme_name			= $puddle_current_data->get( 'Name' );
  * if you change child theme name then 
  * change function name is raindrops_indv_css_[your child theme name]
  */
- 
+function raindrops_indv_css_puddle(){
 
-	function raindrops_indv_css_puddle(){
-	
-		global $puddle_style;
-	
-		$style = $puddle_style;
-		/* Add another color class */
-		
-		//$style .= raindrops_color_base( '#000000','extend' );
+	global $puddle_style;
 
-		
-		/* override style example color type dark include*/
+	$style = $puddle_style;
+	/* Add another color class */
 	
-		//$style .= raindrops_indv_css_dark();
+	//$style .= raindrops_color_base( '#000000','extend' );
 
-		/* override style example latest color type include*/
 	
-		//$style .= raindrops_warehouse_clone( '_raindrops_indv_css' );
-		
-		/* if you use gradient class */
-			$style .= raindrops_gradient_clone( );
+	/* override style example color type dark include*/
+
+	//$style .= raindrops_indv_css_dark();
+
+	/* override style example latest color type include*/
+
+	//$style .= raindrops_warehouse_clone( '_raindrops_indv_css' );
 	
-		$style .= 'a{color:'.raindrops_warehouse_clone( 'raindrops_hyperlink_color' ) . ';}';
-		
-		$font_color = raindrops_warehouse_clone( 'raindrops_default_fonts_color' );
-		
-		if( ! empty( $font_color ) ) {		
-			$style .= "\n". 'body{color:' . $font_color . ';}';
-		}
-		
-		$style .= puddle_body_background_style();
+	/* if you use gradient class */
+		$style .= raindrops_gradient_clone( );
 
-		return $style;
-
+	$style .= 'a{color:'.raindrops_warehouse_clone( 'raindrops_hyperlink_color' ) . ';}';
+	
+	$font_color = raindrops_warehouse_clone( 'raindrops_default_fonts_color' );
+	
+	if( ! empty( $font_color ) ) {		
+		$style .= "\n". 'body{color:' . $font_color . ';}';
 	}
+	$style .= puddle_body_background_style();
+
+	return $style;
+
+}
 	
 /** Parent Template No NEED EXAMPLE
  * Template filterling example
@@ -82,19 +101,17 @@ $puddle_current_theme_name			= $puddle_current_data->get( 'Name' );
  *
  *
  */
- 
 //add_filter( 'template_include', 'puddle_template_include' );
 
-	function puddle_template_include( $template ) {
-	
-			$template_sp = str_replace( 'date.php', 'index.php', $template );
-			
-			if ( file_exists( $template_sp ) ) {
-				$template = $template_sp;
-			}
-		return $template;
-	}
+function puddle_template_include( $template ) {
 
+		$template_sp = str_replace( 'date.php', 'index.php', $template );
+		
+		if ( file_exists( $template_sp ) ) {
+			$template = $template_sp;
+		}
+	return $template;
+}
 /** Child Theme Default Settings
  *
  *
@@ -178,30 +195,30 @@ $puddle_current_theme_name			= $puddle_current_data->get( 'Name' );
  *
  *
  */		
-        function setup_puddle( ) {
+function setup_puddle( ) {
 
-            global $wpdb, $puddle_base_setting_args;
+	global $wpdb, $puddle_base_setting_args;
 
-            $raindrops_theme_settings = get_option( 'raindrops_theme_settings' );
+	$raindrops_theme_settings = get_option( 'raindrops_theme_settings' );
 
-            foreach( $puddle_base_setting_args as $add ) {
-			
-				if( isset($add['option_name']) ){
-				
-                	$option_name = $add['option_name'];
-					$raindrops_theme_settings[$option_name] = $add['option_value'];
-			   }
-            }
-			
-            $style_type				= 'puddle';
-            $raindrops_indv_css		= raindrops_design_output_clone( $style_type ).raindrops_color_base_clone( );
-            $raindrops_indv_css     = raindrops_color_type_custom( $raindrops_indv_css );
+	foreach( $puddle_base_setting_args as $add ) {
+	
+		if( isset($add['option_name']) ){
+		
+			$option_name = $add['option_name'];
+			$raindrops_theme_settings[$option_name] = $add['option_value'];
+	   }
+	}
+	
+	$style_type				= 'puddle';
+	$raindrops_indv_css		= raindrops_design_output_clone( $style_type ).raindrops_color_base_clone( );
+	$raindrops_indv_css     = raindrops_color_type_custom( $raindrops_indv_css );
 
-            $raindrops_theme_settings['_raindrops_indv_css']    = $raindrops_indv_css;
-			
-            update_option( 'raindrops_theme_settings', $raindrops_theme_settings, "", true );
-			update_option( 'puddle_theme_settings', array( 'install_once' => 1 ) );
-        }
+	$raindrops_theme_settings['_raindrops_indv_css']    = $raindrops_indv_css;
+	
+	update_option( 'raindrops_theme_settings', $raindrops_theme_settings, "", true );
+	update_option( 'puddle_theme_settings', array( 'install_once' => 1 ) );
+}
 
 /** Child Theme Install
  *
@@ -209,37 +226,37 @@ $puddle_current_theme_name			= $puddle_current_data->get( 'Name' );
  *
  *
  */
-		$puddle_theme_settings = get_option( 'puddle_theme_settings' );
-	
-		if ( $puddle_theme_settings['install_once'] == false ) {
-			add_action( 'admin_init', 'setup_puddle' );
-		}
+$puddle_theme_settings = get_option( 'puddle_theme_settings' );
+
+if ( $puddle_theme_settings['install_once'] == false ) {
+	add_action( 'admin_init', 'setup_puddle' );
+}
 /** Child Theme Reset option
  *
  *
  *
  *
  */
-		add_action( 'raindrops_remove_theme_mods', 'puddle_remove_theme_mods' );
-		
-		function puddle_remove_theme_mods(){
-			remove_theme_mods( 'puddle' );
-			setup_puddle( );
-		
-		}
+add_action( 'raindrops_remove_theme_mods', 'puddle_remove_theme_mods' );
+
+function puddle_remove_theme_mods(){
+
+	remove_theme_mods( 'puddle' );
+	setup_puddle( );
+
+}
 /** Child Theme Delete
  *
  *
  *
  *
  */		
-		add_action( 'switch_theme', 'puddle_uninstall' );
-		
-		function puddle_uninstall(){
-		
-			delete_option( "puddle_theme_settings" );
-		}
+add_action( 'switch_theme', 'puddle_uninstall' );
 
+function puddle_uninstall(){
+
+	delete_option( "puddle_theme_settings" );
+}
 /** Child Theme Background
  *
  *
@@ -248,49 +265,48 @@ $puddle_current_theme_name			= $puddle_current_data->get( 'Name' );
  */
 function puddle_body_background_style(){
 
-			global $raindrops_custom_background_args;
-			
-			$body_background		= get_theme_mod( "background_color", $raindrops_custom_background_args['default-color'] );
-       		$body_background_image	= get_theme_mod( "background_image", $raindrops_custom_background_args['default-image']);
- //body background
-            $body_background_repeat         = get_theme_mod( "background_repeat" );
-            $body_background_position_x     = get_theme_mod( "background_position_x" );
-            $body_background_attachment     = get_theme_mod( "background_attachment" );
-			
-			$css = '';
-			
-            if ( $body_background !== false and !empty( $body_background ) and !empty( $body_background_image ) ) {
+	global $raindrops_custom_background_args;
+	
+	$body_background				= get_theme_mod( "background_color", $raindrops_custom_background_args['default-color'] );
+	$body_background_image			= get_theme_mod( "background_image", $raindrops_custom_background_args['default-image']);
+//body background
+	$body_background_repeat         = get_theme_mod( "background_repeat" );
+	$body_background_position_x     = get_theme_mod( "background_position_x" );
+	$body_background_attachment     = get_theme_mod( "background_attachment" );
+	
+	$css = '';
+	
+	if ( $body_background !== false and !empty( $body_background ) and !empty( $body_background_image ) ) {
 
-                $css .= "\nbody{background:#".$body_background.' url( '. $body_background_image. ' );}';
-            } elseif ( $body_background !== false and !empty( $body_background ) ) {
+		$css .= "\nbody{background:#".$body_background.' url( '. $body_background_image. ' );}';
+	} elseif ( $body_background !== false and !empty( $body_background ) ) {
 
-                $css .= "\nbody{background-color:#".$body_background.';}';
-            } elseif ( !empty( $body_background_image ) ) {
+		$css .= "\nbody{background-color:#".$body_background.';}';
+	} elseif ( !empty( $body_background_image ) ) {
 
-                $css                    .= "\nbody{background-image: url( ". $body_background_image. ' );}';
-            }
+		$css                    .= "\nbody{background-image: url( ". $body_background_image. ' );}';
+	}
 
-            if ( isset( $body_background_repeat ) and !empty( $body_background_repeat ) ) {
+	if ( isset( $body_background_repeat ) and !empty( $body_background_repeat ) ) {
 
-                $css                    .= "\nbody{background-repeat: ". $body_background_repeat. ';}';
-            }
+		$css                    .= "\nbody{background-repeat: ". $body_background_repeat. ';}';
+	}
 
-            if ( isset( $body_background_position_x ) and !empty( $body_background_position_x ) ) {
+	if ( isset( $body_background_position_x ) and !empty( $body_background_position_x ) ) {
 
-                $css                    .= "\nbody{background-position:top ". $body_background_position_x. ';}';
-            }
+		$css                    .= "\nbody{background-position:top ". $body_background_position_x. ';}';
+	}
 
-            if ( isset( $body_background_attachment ) and !empty( $body_background_attachment ) ) {
+	if ( isset( $body_background_attachment ) and !empty( $body_background_attachment ) ) {
 
-                $css                    .= "\nbody{background-attachment: ". $body_background_attachment. ';}';
-            }
-			
-			return $css."\n";
+		$css                    .= "\nbody{background-attachment: ". $body_background_attachment. ';}';
+	}
+	
+	return $css."\n";
 }
 /** puddle_socialWidget
  * 
  */
- 
 add_action( 'widgets_init', 'puddle_add_widget' );
  
 function puddle_add_widget(){
@@ -298,7 +314,6 @@ function puddle_add_widget(){
 	register_widget( "puddle_socialWidget" );
 	register_widget( "puddle_entryWidget" );
 }
-
  
 class puddle_socialWidget extends WP_Widget {
  
@@ -428,7 +443,6 @@ class puddle_socialWidget extends WP_Widget {
 <?php
 	}
 }
-
 /** Include genericons fonts 
  *
  *
@@ -436,14 +450,12 @@ class puddle_socialWidget extends WP_Widget {
  *
  */
 wp_enqueue_style('puddle-icon-font', apply_filters( 'puddle_web_font', get_stylesheet_directory_uri().'/genericons/genericons.css' ) );
-
 /** 
  *
  *
  *
  *
  */
-
 class puddle_entryWidget extends WP_Widget {
  
  	function puddle_entryWidget() {
@@ -630,10 +642,6 @@ class puddle_entryWidget extends WP_Widget {
 
 	}
 }
-
-
-
-
 /** Add Social links homepage top
  *
  *
@@ -668,7 +676,6 @@ function puddle_header_image_contents( ){
  *
  */
 add_action( 'wp_enqueue_scripts', 'puddle_scripts' );
-
 function puddle_scripts(){
 
 	if( is_home() ) {
@@ -695,7 +702,6 @@ function puddle_scripts(){
  *
  */
 add_action( 'wp_head', 'puddle_scroll_script' );
-
 function puddle_scroll_script(){
 	if( is_home() ) {
 ?>
@@ -1039,6 +1045,7 @@ if (class_exists( 'WP_Customize_Control' ) ){
  *
  */
 function puddle_brightness( $color, $brightness ) {
+
 	$color = str_replace( '#','', $color );
 	
 	if( strlen( $color ) == 6 ) {

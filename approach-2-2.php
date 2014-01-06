@@ -16,8 +16,6 @@ do_action( 'raindrops_pre_part_'. basename( __FILE__, '.php' ). '_'. basename( $
 ?>
 		<!-- Dummy Image -->
 		<li style="margin:-13px 0 0;padding:0;height:313px;"><img style="margin-top:15px;" src="<?php echo get_stylesheet_directory_uri().'/images/dummy.jpg';?>" /></li>
-		
-		
 		<!-- Dummy Image -->	
 <?php		
 	} 

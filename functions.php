@@ -23,7 +23,10 @@ function puddle_base_font_size( $content ){
 }
 wp_enqueue_style('enough-web-font', apply_filters( 'enough_web_font', 'http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' ) );
 
-	//$raindrops_fluid_maximum_width = 800;
+/* Setting Example
+ *
+	$raindrops_fluid_maximum_width = 800;
+ */
 
 /**
  * HEADER IMAGE
@@ -113,13 +116,9 @@ if ( ! empty( $puddle_restore_check ) ) {
 	$puddle_header_style = '';
 }
 
-$puddle_background_color = get_theme_mod( 'background_color' );
-
-$puddle_shadow_color = puddle_brightness( $puddle_background_color,0.6 );
-
-
-
-$puddle_img_dir_url = get_stylesheet_directory_uri().'/images/';
+$puddle_background_color	= get_theme_mod( 'background_color' );
+$puddle_shadow_color		= puddle_brightness( $puddle_background_color,0.6 );
+$puddle_img_dir_url 		= get_stylesheet_directory_uri().'/images/';
 
 	$puddle_style =<<<DOC
 	
@@ -135,11 +134,8 @@ $puddle_img_dir_url = get_stylesheet_directory_uri().'/images/';
 		border:1px solid #bbb;*/
 	}
 	.home #container{
-/*		background:url( {$puddle_img_dir_url}test-main-bg.png );
-		background-position:center;
-		background-repeat:repeat-y;*/
+
 	}
-	
 	.approach{
 		background:#fff;
 		padding:10px;
@@ -149,14 +145,11 @@ $puddle_img_dir_url = get_stylesheet_directory_uri().'/images/';
 		border-image: url("{$puddle_img_dir_url}cutter-face.png") 15 round;
 		border-style:solid; border-width:10px;
 		border:1px solid #bbb;
- 
-
 	}
-	
 	.approach .title a,
 	.approach .title,	
 	.widgettitle{
-		color:#993300;/*!important*/
+		color:#993300;
 		box-shadow: 0 3px 3px rgba(222,222,222,.3);
 		margin:.5em -10px;
 		text-indent:20px;
@@ -164,7 +157,6 @@ $puddle_img_dir_url = get_stylesheet_directory_uri().'/images/';
 		overflow: hidden;
 		-o-text-overflow: ellipsis;
 		text-overflow: ellipsis;
-
 	}
 	ul.approach .widgettitle{
 		display:block;
@@ -172,7 +164,6 @@ $puddle_img_dir_url = get_stylesheet_directory_uri().'/images/';
 		margin:.5em -20px .5em -10px;
 		text-indent:20px;
 	}
-	
 	.coal{
 		background:#000;
 		color:#fff;
@@ -184,7 +175,6 @@ $puddle_img_dir_url = get_stylesheet_directory_uri().'/images/';
 		background: -o-linear-gradient(bottom,#eee, #ccc); /* Opera 11.10+ */
 		background: linear-gradient(  totop, #eee, #ccc); /* W3C */
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eee', endColorstr='#ccc', GradientType=0); /* IE6-9 */
-
 	}
 	.coal .widget li a{
 		color:#000;
@@ -195,7 +185,6 @@ $puddle_img_dir_url = get_stylesheet_directory_uri().'/images/';
 		color:#fff;
 		width:100%;
 	}
-
 	.stand-out{
 		background:#191970;
 		color:#fff;
@@ -208,7 +197,6 @@ $puddle_img_dir_url = get_stylesheet_directory_uri().'/images/';
 		background: -o-linear-gradient(bottom,#191970, #000080); /* Opera 11.10+ */
 		background: linear-gradient(  totop, #191970, #000080); /* W3C */
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#191970', endColorstr='#000080', GradientType=0); /* IE6-9 */
-
 	}
 	.stand-out .widget li a{
 		color:#fff;
@@ -228,9 +216,7 @@ $puddle_img_dir_url = get_stylesheet_directory_uri().'/images/';
 		margin: -10px -20px .5em -10px!important;
 		padding:10px;
 		text-indent:.2em;
-
 	}
-	
 	.gray{
 		background:gray;
 		color:#fff;
@@ -260,7 +246,6 @@ $puddle_img_dir_url = get_stylesheet_directory_uri().'/images/';
 		background: -o-linear-gradient(bottom,#ccc, #eee); /* Opera 11.10+ */
 		background: linear-gradient(  totop, #ccc, #eee); /* W3C */
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ccc', endColorstr='#eee', GradientType=0); /* IE6-9 */
-
 	}
 	.raindrops-tab-list li a{
 		color:#000;
@@ -273,15 +258,12 @@ $puddle_img_dir_url = get_stylesheet_directory_uri().'/images/';
 		background: -o-linear-gradient(bottom,#aaa, #ccc); /* Opera 11.10+ */
 		background: linear-gradient(  totop, #aaa, #ccc); /* W3C */
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#aaa', endColorstr='#ccc', GradientType=0); /* IE6-9 */
-
-
 	}
 	.home-tab-list{
 		box-shadow: 0 5px 3px -2px {$puddle_shadow_color};
 		height: 323px;
 		overflow:hidden;
 		border-bottom:1px solid rgba(222,222,222,.6);
-
 	}
 @media screen and (max-width : 780px){
 	.raindrops-tab-list li{
@@ -312,7 +294,6 @@ $puddle_img_dir_url = get_stylesheet_directory_uri().'/images/';
 		margin:0 0 10px 0;
 		text-align:left;
 		font-family: 'Open Sans Condensed', sans-serif;
-
 	}
 	.unit .wp-calendar{
 	
@@ -328,9 +309,7 @@ $puddle_img_dir_url = get_stylesheet_directory_uri().'/images/';
 		background: -o-linear-gradient(bottom,gray, black); /* Opera 11.10+ */
 		background: linear-gradient(  totop, gray, black); /* W3C */
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='gray', endColorstr='black', GradientType=0); /* IE6-9 */
-
 		font-family: 'Open Sans Condensed', sans-serif;
-		
 	}
 	.unit .widget_calendar tbody{
 		background: -webkit-linear-gradient(bottom, #eee, #ccc); /* Chrome10+, #post-21 Safari5.1+ */
@@ -339,13 +318,11 @@ $puddle_img_dir_url = get_stylesheet_directory_uri().'/images/';
 		background: -o-linear-gradient(bottom,#eee, #ccc); /* Opera 11.10+ */
 		background: linear-gradient(  totop, #eee, #ccc); /* W3C */
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eee', endColorstr='#ccc', GradientType=0); /* IE6-9 */
-
 		color:#000;
 	}
 	.unit .widget_calendar tbody td{
 		height:2em;
 	}
-	
 	.approach .widget li{
 		line-height:2;
 		border-bottom:1px solid rgba(222,222,222,.6);
@@ -358,8 +335,6 @@ $puddle_img_dir_url = get_stylesheet_directory_uri().'/images/';
 		text-overflow: ellipsis;
 	}
 	.approach .widget li a{
-/*		color:#fff;
-		font-weight:bold;*/
 		
 	}
 	.approach-content{
@@ -428,36 +403,32 @@ $puddle_img_dir_url = get_stylesheet_directory_uri().'/images/';
 	#wp-calendar #next{
 		font-size:small;
 	}
-
 	.home .portfolio.column-4 ul.index > li{
 		width:23%;
 		margin:1.22222%;
-	
 	}
 	.home .portfolio.column-3 ul.index > li{
 		width:32%;
 		margin:1%;
-	
 	}
 	.home .portfolio.column-2 ul.index > li{
 		width:49%;
 		margin:1%;
 	}
-	
 	.home .portfolio ul.index > li:first-child{
 		margin-left:0;
 	}
 	.home .portfolio ul.index > li:last-child{
 		margin-right:0;
 	}
-	
 	.portfolio li{
 		box-shadow: 0 3px 3px {$puddle_shadow_color};
 	}
 	.line{
-		/*margin-bottom:10px;*/
+
 	}
 	.unit{
+	
 	}
 	.approach .title a{
 		border:none;
@@ -525,7 +496,6 @@ $puddle_img_dir_url = get_stylesheet_directory_uri().'/images/';
 		border-bottom:1px solid #bbb;
 	}
 	#raindrops_year_list tr:nth-child( even ),
-	/*#month_list tr,*/
 	#date_list tr:nth-child(odd){
 		color:#333;
 		background:rgba(222,222,222,.6);
@@ -544,7 +514,6 @@ $puddle_img_dir_url = get_stylesheet_directory_uri().'/images/';
 	.portfolio-nav li{
 		background:none;
 				border:none;
-
 	}
 	.portfolio-nav li a{
 		background:#fff;
@@ -552,7 +521,6 @@ $puddle_img_dir_url = get_stylesheet_directory_uri().'/images/';
 		border-radius:50%;
 		border:1px solid #bbb;
 		box-shadow: 0 3px 3px {$puddle_shadow_color};
-
 	}
 	#portfolio .portfolio-nav li a:hover{
 		text-decoration:none!important;
@@ -561,7 +529,6 @@ $puddle_img_dir_url = get_stylesheet_directory_uri().'/images/';
 		text-decoration:none!important;
 		text-shadow:2px 2px 3px #ccc;
 	}
-
 	.portfolio-nav > ul{
 		margin:2px;
 	}
@@ -665,7 +632,6 @@ $puddle_img_dir_url = get_stylesheet_directory_uri().'/images/';
 	#ft{
 		/*background:#fff;*/
 	}
-	
 	.month-name{
 		line-height:2.5;
 	}
@@ -698,7 +664,6 @@ $puddle_img_dir_url = get_stylesheet_directory_uri().'/images/';
 	.gallery img:hover {
   		-webkit-filter: brightness(110%);
 	}
-
 /* below line don't add space, tab,anything */
 DOC;
 

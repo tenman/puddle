@@ -11,7 +11,6 @@ global $template;
 do_action( 'raindrops_pre_part_'. basename( __FILE__, '.php' ). '_'. basename( $template ) );
 ?>
 <ul class="approach coal">
-
 <?php
 	if ( ! dynamic_sidebar('approach-2-1' ) ) {
 		$raindrops_category_posts_setting = array(	

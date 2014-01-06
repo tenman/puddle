@@ -14,17 +14,13 @@ do_action( 'raindrops_pre_part_'. basename( __FILE__, '.php' ). '_'. basename( $
 <?php
 	if ( ! dynamic_sidebar('approach-1-1' ) ) {
 	
-	$puddle_page = get_posts( array( 'post_type' => 'page','orderby' => 'post_date','order' => 'ASC', ) );
-	
-	
-	$post = $puddle_page[0];	
-			setup_postdata($post);
-			
-				printf( '<!--%1$s-->', $raindrops_document_type );
+		$puddle_page	= get_posts( array( 'post_type' => 'page','orderby' => 'post_date','order' => 'ASC', ) );
+		$post			= $puddle_page[0];	
+		setup_postdata($post);
+		printf( '<!--%1$s-->', $raindrops_document_type );
 ?>
         			<li style="margin:0;border:none;"><div class="entry page approach-content">
           				<<?php raindrops_doctype_elements( 'div', 'article' );?> id="post-<?php the_ID( ); ?>" <?php raindrops_post_class( );?>>
-
 <?php 
 				raindrops_entry_title( );
 ?>
