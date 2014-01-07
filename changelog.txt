@@ -1,4 +1,11 @@
 Changelog -----------------------------------
+version:0.2.1
+	Fixed
+		Fixed wp_nav_menu background display improperly.
+	Modify
+		Dinamic CSS ( functions.php )
+----------------------------------------------
+Changelog -----------------------------------
 version:0.2
 	initial release
 ----------------------------------------------
