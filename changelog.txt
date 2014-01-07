@@ -1,5 +1,5 @@
 Changelog -----------------------------------
-version:0.2.1
+version:0.2.2
 	Fixed
 		Fixed wp_nav_menu background display improperly.
 	Modify
