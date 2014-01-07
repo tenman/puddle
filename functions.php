@@ -85,7 +85,7 @@ if ( $puddle_restore_check !== 'remove-header' ) {
 
 $puddle_restore_check =	get_background_image();
 
-if ( ! empty( $puddle_restore_check ) ) {
+if ( ! empty( $puddle_restore_check ) and basename( $puddle_restore_check ) !== 'puddle-bg.png' ) {
 
 	$puddle_header_style = '.hfeed{background:inherit;}';
 	
@@ -337,6 +337,13 @@ $puddle_img_dir_url 		= get_stylesheet_directory_uri().'/images/';
 	.approach .widget li a{
 		
 	}
+	.home .unit{/* add*/
+		height: 325px;
+	}
+	.line{/* add*/
+		margin-bottom:10px;
+	}
+
 	.approach-content{
 		min-height:275px;
 	}
@@ -513,17 +520,22 @@ $puddle_img_dir_url 		= get_stylesheet_directory_uri().'/images/';
 	}
 	.portfolio-nav li{
 		background:none;
-				border:none;
+		border:none;
+	}
+	.portfolio-nav li:hover a{
+		color:#000;
 	}
 	.portfolio-nav li a{
-		background:#fff;
+		background:#000;
+		color:#fff;
 		padding:10px;
-		border-radius:50%;
+		border-radius:5%;
 		border:1px solid #bbb;
 		box-shadow: 0 3px 3px {$puddle_shadow_color};
 	}
 	#portfolio .portfolio-nav li a:hover{
 		text-decoration:none!important;
+		color:#000;
 	}
 	#portfolio .portfolio-nav li a:active{
 		text-decoration:none!important;
@@ -660,6 +672,7 @@ $puddle_img_dir_url 		= get_stylesheet_directory_uri().'/images/';
 		  -ms-transition: all 1s ease;
 			  transition: all 1s ease;
 	}
+
 	.approach-image:hover,
 	.gallery img:hover {
   		-webkit-filter: brightness(110%);
