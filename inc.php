@@ -443,13 +443,6 @@ class puddle_socialWidget extends WP_Widget {
 <?php
 	}
 }
-/** Include genericons fonts 
- *
- *
- *
- *
- */
-wp_enqueue_style('puddle-icon-font', apply_filters( 'puddle_web_font', get_stylesheet_directory_uri().'/genericons/genericons.css' ) );
 /** 
  *
  *
@@ -694,6 +687,20 @@ function puddle_scripts(){
 							get_stylesheet_directory_uri().'/js/perfect-scrollbar.css',
 							array(), $puddle_current_data_version );
 	}
+/** Include genericons fonts 
+ *
+ *
+ *
+ *
+ */
+	wp_enqueue_style('puddle-icon-font', apply_filters( 'puddle_web_font', get_stylesheet_directory_uri().'/genericons/genericons.css' ) );
+/** Include web fonts 
+ *
+ *
+ *
+ *
+ */
+	wp_enqueue_style('enough-web-font', apply_filters( 'enough_web_font', 'http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' ) );
 }
 /**
  *
