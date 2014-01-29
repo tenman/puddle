@@ -161,6 +161,7 @@ function puddle_template_include( $template ) {
         ),
         array(
         'option_name' => "raindrops_footer_color",
+
         'option_value' => "",
         ),
         array(
@@ -575,7 +576,7 @@ class puddle_entryWidget extends WP_Widget {
 				esc_html( $id )
 			);		
 
-		$puddle_html = '<h4>%1$s</h4><p><label style="display:inline;"><input type="radio" id="%2$s" name="%3$s" value="%7$s" %4$s style="display:inline;" %5$s />%6$s</label>';
+		$puddle_html = '<h4>%1$s</h4><p><label style="display:inline-block;"><input type="radio" id="%2$s" name="%3$s" value="%7$s" %4$s style="display:inline-block;" %5$s />%6$s</label>';
 		
 		printf( $puddle_html,
 				'Post Type',
@@ -588,7 +589,7 @@ class puddle_entryWidget extends WP_Widget {
 			);
 
 			
-		$puddle_html = 	'<label style="display:inline;"><input type="radio" id="%1$s" name="%2$s" value="%5$s" %3$s style="display:inline;" />%4$s</label></p>';
+		$puddle_html = 	'<label style="display:inline-block;"><input type="radio" id="%1$s" name="%2$s" value="%5$s" %3$s style="display:inline-block;" />%4$s</label></p>';
 		
 		printf( $puddle_html,
 				esc_attr( $this->get_field_id('type') ),
@@ -600,7 +601,7 @@ class puddle_entryWidget extends WP_Widget {
 
 
 	
-		$puddle_html = '<h4>%1$s</h4><p><label style="display:inline;"><input type="radio" id="%2$s" name="%3$s" value="%7$s" %4$s style="display:inline;" %5$s />%6$s</label>';
+		$puddle_html = '<h4>%1$s</h4><p><label style="display:inline-block;"><input type="radio" id="%2$s" name="%3$s" value="%7$s" %4$s style="display:inline-block;" %5$s />%6$s</label>';
 		
 		printf( $puddle_html,
 				'Content Type',
@@ -613,7 +614,7 @@ class puddle_entryWidget extends WP_Widget {
 				
 			);
 			
-		$puddle_html = 	'<label style="display:inline;"><input type="radio" id="%1$s" name="%2$s" value="%5$s" %3$s style="display:inline;" />%4$s</label>';
+		$puddle_html = 	'<label style="display:inline-block;"><input type="radio" id="%1$s" name="%2$s" value="%5$s" %3$s style="display:inline-block;" />%4$s</label>';
 		
 		printf( $puddle_html,
 				esc_attr( $this->get_field_id('content') ),
@@ -623,7 +624,7 @@ class puddle_entryWidget extends WP_Widget {
 				'excerpt'
 			);
 
-		$puddle_html = 	'<label style="display:inline;"><input type="radio" id="%1$s" name="%2$s" value="%5$s" %3$s style="display:inline;" />%4$s</label></p>';
+		$puddle_html = 	'<label style="display:inline-block;"><input type="radio" id="%1$s" name="%2$s" value="%5$s" %3$s style="display:inline-block;" />%4$s</label></p>';
 		
 		printf( $puddle_html,
 				esc_attr( $this->get_field_id('content') ),

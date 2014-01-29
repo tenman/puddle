@@ -1,4 +1,9 @@
 Changelog -----------------------------------
+version:0.2.4
+	Fixed
+		Fixed Widget Special entries radio button display improperly.
+----------------------------------------------
+Changelog -----------------------------------
 version:0.2.3
 	Fixed
  		Remove Undefined variable: extend_class

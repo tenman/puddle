@@ -370,6 +370,10 @@ $puddle_img_dir_url 		= get_stylesheet_directory_uri().'/images/';
 	.home .edit-link{
 		border:none;
 	}
+	.home #doc3 .entry-meta a{
+		display:inline-block;
+		width:auto;
+	}
 }
 
 /* not home */
