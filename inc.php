@@ -257,6 +257,7 @@ add_action( 'switch_theme', 'puddle_uninstall' );
 function puddle_uninstall(){
 
 	delete_option( "puddle_theme_settings" );
+	delete_option("raindrops_theme_settings");
 }
 /** Child Theme Background
  *

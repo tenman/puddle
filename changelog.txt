@@ -1,4 +1,10 @@
 Changelog -----------------------------------
+version:0.2.5
+	Modify
+		Add delete_option("raindrops_theme_settings");
+			parent theme related change.
+----------------------------------------------
+Changelog -----------------------------------
 version:0.2.4
 	Fixed
 		Fixed Widget Special entries radio button display improperly.
