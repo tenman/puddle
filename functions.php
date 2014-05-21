@@ -65,6 +65,13 @@ $raindrops_custom_background_args = array( 'default-color' => 'fefefe'
 
 add_theme_support( 'custom-background', $raindrops_custom_background_args );
 /**
+ *  Raindrops Status bar
+ * 
+ *  This child theme can not use status bar.
+ * 
+ */
+$raindrops_status_bar = false;
+/**
  * Dynamic STYLE 
  * This style setting uses when Color Type Select puddle
  *

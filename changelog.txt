@@ -1,4 +1,11 @@
 Changelog -----------------------------------
+version:1.215
+	Modify
+		Change to be the same as the version that made the operation check of the parent theme, the version number of the child theme
+		I changed to the latest in Raindrops, an image that is attached to the child theme
+	Fix page width display improperly at 750px 950px 974px page width
+----------------------------------------------
+Changelog -----------------------------------
 version:0.2.5
 	Modify
 		Add delete_option("raindrops_theme_settings");
@@ -16,7 +23,7 @@ version:0.2.3
 		Fixed Undefined variable: $nav_menu_color
 			Change var name from $nav_menu_color to $puddle_nav_menu_color
 			and add $nav_menu_color = '';
-		Fixed wp_enqueue_style was called incorrectly. 
+		Fixed wp_enqueue_style was called incorrectly.
 			wp_enqueue_style('puddle-icon-font') and wp_enqueue_style('enough-web-font')
 			move to puddle_scripts()
 ----------------------------------------------
