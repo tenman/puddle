@@ -1,5 +1,5 @@
 Changelog -----------------------------------
-version:1.215
+version:1.216
 	Modify
 		Change to be the same as the version that made the operation check of the parent theme, the version number of the child theme
 		I changed to the latest in Raindrops, an image that is attached to the child theme
